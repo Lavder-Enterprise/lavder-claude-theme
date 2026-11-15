@@ -52,3 +52,16 @@ test('the session starts on ink and /lavder-tema switches and remembers', async 
   expect(unknown.text).toBe('Varianti: ink, nero, caldo. Esempio: /lavder-tema nero')
   expect(painted).toEqual(['Lavder', 'Lavder Nero'])
 })
+
+test('the working row shows the Lavder mark and the row\'s words on desktop', async $ => {
+  const ui = await $.ui.mount({
+    plugin: 'lavder-theme',
+    component: 'Spinner',
+    surface: 'desktop',
+    props: { word: 'Working', message: null, suffix: '…', mode: 'thinking' },
+  })
+
+  expect((await ui.find({ type: 'Svg' }))?.props.alt).toBe('Lavder')
+  expect((await ui.find({ type: 'Text' }))?.text).toBe('Working…')
+  await ui.unmount()
+})

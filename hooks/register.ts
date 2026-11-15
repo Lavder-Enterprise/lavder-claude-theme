@@ -2,6 +2,7 @@ import type { EngineInterface, Register } from 'claude-code'
 
 import { isVariant, paletteOf, VARIANT_NAMES } from './palette'
 import type { Variant } from './palette'
+import { registerSpinner } from './spinner'
 
 const COMMAND = 'lavder-tema'
 const DEFAULT: Variant = 'ink'
@@ -19,6 +20,8 @@ async function paint($: EngineInterface, variant: Variant): Promise<string> {
 }
 
 export const register: Register = on => {
+  registerSpinner(on)
+
   on('session.start', async ($, e, next) => {
     await $.command.register({
       name: COMMAND,

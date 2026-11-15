@@ -19,6 +19,10 @@ Every text color is at least 4.9:1 on every surface (WCAG AA).
 
 `/lavder-tema ink` (default, conversation `#111113`), `/lavder-tema nero` (true black), `/lavder-tema caldo` (warm black). The choice is remembered across sessions.
 
+## Working row
+
+In the desktop app, the row that shows while Claude works carries the Lavder mark instead of the app's own: an orange six-ray star pulses and turns, gathers into a rounded triangle and opens into the Lavder monogram, then back. It is one SVG animated without script, in `hooks/mark.ts`.
+
 ## Install
 
 At the prompt of a terminal session:
@@ -39,7 +43,7 @@ Answer `y` to add the marketplace and pick the user scope. The theme is drawn in
 
 ## What the mod does
 
-It sets the app's colors at session start and registers the `/lavder-tema` command. It stores one value, the chosen black. It reads no files, runs no processes, makes no network calls and hooks no tool calls.
+It sets the app's colors at session start, registers the `/lavder-tema` command and draws the mark of the working row. It stores one value, the chosen black. It reads no files, runs no processes, makes no network calls and hooks no tool calls.
 
 ## Changing the colors
 

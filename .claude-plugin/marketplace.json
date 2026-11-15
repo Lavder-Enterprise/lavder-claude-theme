@@ -1,13 +1,16 @@
 {
   "name": "lavder-claude-theme",
-  "owner": { "name": "Lavder Enterprise", "email": "ai@lavder.com" },
+  "owner": {
+    "name": "Lavder Enterprise",
+    "email": "ai@lavder.com"
+  },
   "description": "The Lavder look for the Claude desktop and mobile apps",
   "plugins": [
     {
       "name": "lavder-theme",
       "source": "./",
       "description": "Lavder look for the Claude desktop and mobile apps: brand ink black, Lavder orange as the accent",
-      "version": "1.0.0"
+      "version": "1.1.0"
     }
   ]
 }
